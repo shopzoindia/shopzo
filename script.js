@@ -1,65 +1,66 @@
 let cartCount = 0;
 
-const cartCountElement =
-  document.getElementById("cartCount");
+const cartToast =
+  document.getElementById("cartToast");
 
-const addButtons =
+const cartButtons =
   document.querySelectorAll(".add-button");
-
-const categoryButtons =
-  document.querySelectorAll(".category");
-
-const products =
-  document.querySelectorAll(".product");
 
 const searchInput =
   document.getElementById("searchInput");
 
-const clearFilter =
-  document.getElementById("clearFilter");
+const products =
+  document.querySelectorAll(".product");
 
-const shopNowButton =
-  document.getElementById("shopNowButton");
+const categories =
+  document.querySelectorAll(".category");
 
 
-/* Add to Cart */
+/* Add to cart */
 
-addButtons.forEach(function(button) {
+cartButtons.forEach(function(button) {
 
   button.addEventListener("click", function() {
 
     cartCount++;
 
-    cartCountElement.textContent =
-      cartCount;
-
-    alert(
+    cartToast.textContent =
       button.dataset.product +
-      " cart mein add ho gaya!"
-    );
+      " added to cart 🛒";
+
+    cartToast.style.display = "block";
+
+    setTimeout(function() {
+      cartToast.style.display = "none";
+    }, 1800);
 
   });
 
 });
 
 
-/* Category Filter */
+/* Category filter */
 
-categoryButtons.forEach(function(button) {
+categories.forEach(function(category) {
 
-  button.addEventListener("click", function() {
+  category.addEventListener("click", function() {
 
-    const category =
-      button.dataset.category;
+    const selected =
+      category.dataset.category;
 
     products.forEach(function(product) {
 
       if (
-        product.dataset.category === category
+        selected === "all" ||
+        product.dataset.category === selected
       ) {
+
         product.style.display = "block";
+
       } else {
+
         product.style.display = "none";
+
       }
 
     });
@@ -69,27 +70,14 @@ categoryButtons.forEach(function(button) {
 });
 
 
-/* View All */
-
-clearFilter.addEventListener("click", function() {
-
-  products.forEach(function(product) {
-
-    product.style.display = "block";
-
-  });
-
-});
-
-
-/* Search */
+/* Product search */
 
 searchInput.addEventListener(
   "input",
   function() {
 
     const search =
-      searchInput.value.toLowerCase();
+      searchInput.value.toLowerCase().trim();
 
     products.forEach(function(product) {
 
@@ -115,17 +103,33 @@ searchInput.addEventListener(
 );
 
 
-/* Shop Now */
+/* Sale countdown */
 
-shopNowButton.addEventListener(
-  "click",
-  function() {
+let seconds = 13 * 60 * 60 + 12 * 60 + 28;
 
-    document
-      .getElementById("products")
-      .scrollIntoView({
-        behavior: "smooth"
-      });
+setInterval(function() {
 
+  if (seconds <= 0) {
+    seconds = 24 * 60 * 60;
   }
-);
+
+  seconds--;
+
+  const hours =
+    Math.floor(seconds / 3600);
+
+  const minutes =
+    Math.floor((seconds % 3600) / 60);
+
+  const secs =
+    seconds % 60;
+
+  document.getElementById("timer")
+    .textContent =
+      String(hours).padStart(2, "0") +
+      " : " +
+      String(minutes).padStart(2, "0") +
+      " : " +
+      String(secs).padStart(2, "0");
+
+}, 1000);

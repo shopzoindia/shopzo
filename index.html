@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shopzo - Online Shopping</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="topbar">
+
+      <a href="#" class="logo">Shopzo</a>
+
+      <input
+        type="search"
+        id="searchInput"
+        class="search"
+        placeholder="Search products..."
+      >
+
+      <button id="cartButton" class="cart-button">
+        🛒 Cart <span id="cartCount">0</span>
+      </button>
+
+    </div>
+  </header>
+
+
+  <main class="container">
+
+    <section class="hero">
+      <div>
+        <h1>Welcome to Shopzo 🛍️</h1>
+        <p>Everything you love, all in one place.</p>
+
+        <button class="shop-button" id="shopNowButton">
+          Shop Now
+        </button>
+      </div>
+    </section>
+
+
+    <section class="section">
+
+      <h2>Categories</h2>
+
+      <div class="categories">
+
+        <button class="category" data-category="Fashion">
+          <span>👗</span>
+          Fashion
+        </button>
+
+        <button class="category" data-category="Electronics">
+          <span>📱</span>
+          Electronics
+        </button>
+
+        <button class="category" data-category="Home">
+          <span>🏠</span>
+          Home
+        </button>
+
+        <button class="category" data-category="Beauty">
+          <span>💄</span>
+          Beauty
+        </button>
+
+        <button class="category" data-category="Shoes">
+          <span>👟</span>
+          Shoes
+        </button>
+
+        <button class="category" data-category="Kids">
+          <span>🧸</span>
+          Kids
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <div class="section-title">
+        <h2>Popular Products</h2>
+        <button id="clearFilter">View All</button>
+      </div>
+
+      <div id="products" class="products">
+
+        <article class="product" data-category="Fashion">
+          <div class="product-image">👕</div>
+
+          <div class="product-info">
+            <h3>Stylish T-Shirt</h3>
+            <p class="category-name">Fashion</p>
+            <p class="price">₹399</p>
+
+            <button class="add-button" data-product="Stylish T-Shirt">
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+
+        <article class="product" data-category="Shoes">
+          <div class="product-image">👟</div>
+
+          <div class="product-info">
+            <h3>Casual Shoes</h3>
+            <p class="category-name">Shoes</p>
+            <p class="price">₹799</p>
+
+            <button class="add-button" data-product="Casual Shoes">
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+
+        <article class="product" data-category="Electronics">
+          <div class="product-image">🎧</div>
+
+          <div class="product-info">
+            <h3>Wireless Headphones</h3>
+            <p class="category-name">Electronics</p>
+            <p class="price">₹999</p>
+
+            <button class="add-button" data-product="Wireless Headphones">
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+
+        <article class="product" data-category="Fashion">
+          <div class="product-image">👜</div>
+
+          <div class="product-info">
+            <h3>Fashion Bag</h3>
+            <p class="category-name">Fashion</p>
+            <p class="price">₹599</p>
+
+            <button class="add-button" data-product="Fashion Bag">
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+    <p>© 2026 Shopzo. All rights reserved.</p>
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+        </html>

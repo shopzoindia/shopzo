@@ -3,170 +3,577 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Shopzo - Online Shopping</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <header class="header">
-    <div class="topbar">
+<header class="header">
 
-      <a href="#" class="logo">Shopzo</a>
+  <div class="header-top">
 
-      <input
-        type="search"
-        id="searchInput"
-        class="search"
-        placeholder="Search products..."
-      >
+    <div class="profile">
+      <div class="profile-icon">🙏</div>
+      <div>
+        <small>Hello,</small>
+        <strong>Let's shop!</strong>
+      </div>
+    </div>
 
-      <button id="cartButton" class="cart-button">
-        🛒 Cart <span id="cartCount">0</span>
+    <div class="header-actions">
+      <button>♡</button>
+      <button>🛒</button>
+    </div>
+
+  </div>
+
+  <div class="sale-banner">
+    <div>
+      <b>SHOPZO</b>
+      <strong>MEGA SAVINGS SALE</strong>
+      <small>UP TO 70% OFF</small>
+    </div>
+    <span>⚡</span>
+  </div>
+
+  <div class="search-box">
+    <span>⌕</span>
+    <input
+      id="searchInput"
+      type="search"
+      placeholder="Search by Keyword or Product ID"
+    >
+    <button>🎤</button>
+    <button>📷</button>
+  </div>
+
+</header>
+
+
+<main>
+
+  <!-- Benefits -->
+
+  <section class="benefits">
+
+    <div>
+      <span>📦</span>
+      <b>7 Days</b>
+      <small>Easy Return</small>
+    </div>
+
+    <div>
+      <span>💵</span>
+      <b>Cash on</b>
+      <small>Delivery</small>
+    </div>
+
+    <div>
+      <span>🏷️</span>
+      <b>Lowest</b>
+      <small>Price</small>
+    </div>
+
+  </section>
+
+
+  <!-- Categories -->
+
+  <section class="category-section">
+
+    <div class="section-heading">
+      <h2>Shop by Category</h2>
+      <button>View All</button>
+    </div>
+
+    <div class="categories">
+
+      <button class="category" data-category="all">
+        <div>▦</div>
+        <span>All</span>
+      </button>
+
+      <button class="category" data-category="fashion">
+        <div>👗</div>
+        <span>Fashion</span>
+      </button>
+
+      <button class="category" data-category="electronics">
+        <div>📱</div>
+        <span>Electronics</span>
+      </button>
+
+      <button class="category" data-category="beauty">
+        <div>💄</div>
+        <span>Beauty</span>
+      </button>
+
+      <button class="category" data-category="home">
+        <div>🏠</div>
+        <span>Home</span>
+      </button>
+
+      <button class="category" data-category="kids">
+        <div>🧸</div>
+        <span>Kids</span>
+      </button>
+
+      <button class="category" data-category="shoes">
+        <div>👟</div>
+        <span>Shoes</span>
       </button>
 
     </div>
-  </header>
+
+  </section>
 
 
-  <main class="container">
+  <!-- Offer Zone -->
 
-    <section class="hero">
+  <section class="offer-zone">
+
+    <div class="offer-title">
+      <span>✨</span>
+      <h2>OFFER ZONE</h2>
+      <span>✨</span>
+    </div>
+
+    <div class="offer-grid">
+
+      <div class="offer-card">
+        <span>SALE</span>
+        <div>👗</div>
+        <strong>Fashion</strong>
+        <small>From ₹99</small>
+      </div>
+
+      <div class="offer-card">
+        <span>SALE</span>
+        <div>🧸</div>
+        <strong>Kids Store</strong>
+        <small>Up to 70% OFF</small>
+      </div>
+
+      <div class="offer-card">
+        <span>SALE</span>
+        <div>👔</div>
+        <strong>Men Fashion</strong>
+        <small>From ₹99</small>
+      </div>
+
+      <div class="offer-card">
+        <span>SALE</span>
+        <div>🍳</div>
+        <strong>Home & Kitchen</strong>
+        <small>Up to 70% OFF</small>
+      </div>
+
+      <div class="offer-card">
+        <span>SALE</span>
+        <div>💄</div>
+        <strong>Beauty & Care</strong>
+        <small>From ₹49</small>
+      </div>
+
+      <div class="offer-card">
+        <span>SALE</span>
+        <div>👚</div>
+        <strong>Women Wear</strong>
+        <small>From ₹99</small>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Saver -->
+
+  <section class="saver">
+
+    <h2>Shopzo Super Saver</h2>
+
+    <div class="saver-row">
+
       <div>
-        <h1>Welcome to Shopzo 🛍️</h1>
-        <p>Everything you love, all in one place.</p>
-
-        <button class="shop-button" id="shopNowButton">
-          Shop Now
-        </button>
-      </div>
-    </section>
-
-
-    <section class="section">
-
-      <h2>Categories</h2>
-
-      <div class="categories">
-
-        <button class="category" data-category="Fashion">
-          <span>👗</span>
-          Fashion
-        </button>
-
-        <button class="category" data-category="Electronics">
-          <span>📱</span>
-          Electronics
-        </button>
-
-        <button class="category" data-category="Home">
-          <span>🏠</span>
-          Home
-        </button>
-
-        <button class="category" data-category="Beauty">
-          <span>💄</span>
-          Beauty
-        </button>
-
-        <button class="category" data-category="Shoes">
-          <span>👟</span>
-          Shoes
-        </button>
-
-        <button class="category" data-category="Kids">
-          <span>🧸</span>
-          Kids
-        </button>
-
+        <div class="round-image">👕</div>
+        <b>UNDER</b>
+        <strong>₹99</strong>
       </div>
 
-    </section>
-
-
-    <section class="section">
-
-      <div class="section-title">
-        <h2>Popular Products</h2>
-        <button id="clearFilter">View All</button>
+      <div>
+        <div class="round-image">🐶</div>
+        <b>UNDER</b>
+        <strong>₹149</strong>
       </div>
 
-      <div id="products" class="products">
-
-        <article class="product" data-category="Fashion">
-          <div class="product-image">👕</div>
-
-          <div class="product-info">
-            <h3>Stylish T-Shirt</h3>
-            <p class="category-name">Fashion</p>
-            <p class="price">₹399</p>
-
-            <button class="add-button" data-product="Stylish T-Shirt">
-              Add to Cart
-            </button>
-          </div>
-        </article>
-
-
-        <article class="product" data-category="Shoes">
-          <div class="product-image">👟</div>
-
-          <div class="product-info">
-            <h3>Casual Shoes</h3>
-            <p class="category-name">Shoes</p>
-            <p class="price">₹799</p>
-
-            <button class="add-button" data-product="Casual Shoes">
-              Add to Cart
-            </button>
-          </div>
-        </article>
-
-
-        <article class="product" data-category="Electronics">
-          <div class="product-image">🎧</div>
-
-          <div class="product-info">
-            <h3>Wireless Headphones</h3>
-            <p class="category-name">Electronics</p>
-            <p class="price">₹999</p>
-
-            <button class="add-button" data-product="Wireless Headphones">
-              Add to Cart
-            </button>
-          </div>
-        </article>
-
-
-        <article class="product" data-category="Fashion">
-          <div class="product-image">👜</div>
-
-          <div class="product-info">
-            <h3>Fashion Bag</h3>
-            <p class="category-name">Fashion</p>
-            <p class="price">₹599</p>
-
-            <button class="add-button" data-product="Fashion Bag">
-              Add to Cart
-            </button>
-          </div>
-        </article>
-
+      <div>
+        <div class="round-image">👜</div>
+        <b>UNDER</b>
+        <strong>₹199</strong>
       </div>
 
-    </section>
+    </div>
 
-  </main>
-
-
-  <footer class="footer">
-    <p>© 2026 Shopzo. All rights reserved.</p>
-  </footer>
+  </section>
 
 
-  <script src="script.js"></script>
+  <!-- Countdown -->
+
+  <div class="countdown">
+    <b>⚡ SALE ENDS IN</b>
+    <span id="timer">13 : 12 : 28</span>
+  </div>
+
+
+  <!-- Flash Sale -->
+
+  <section class="flash">
+
+    <div class="section-heading">
+      <div>
+        <h2>Flash Sale ⚡</h2>
+        <small>Limited time offers</small>
+      </div>
+
+      <button>VIEW ALL ›</button>
+    </div>
+
+    <div class="flash-row">
+
+      <div>
+        <div class="flash-img">👗</div>
+        <b>Kurtis & Suits</b>
+      </div>
+
+      <div>
+        <div class="flash-img">🍳</div>
+        <b>Home & Kitchen</b>
+      </div>
+
+      <div>
+        <div class="flash-img">🧸</div>
+        <b>Kids Store</b>
+      </div>
+
+      <div>
+        <div class="flash-img">👟</div>
+        <b>Footwear</b>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Filters -->
+
+  <div class="filters">
+
+    <button>↕ Sort</button>
+    <button>Category⌄</button>
+    <button>Gender⌄</button>
+    <button>☷ Filters</button>
+
+  </div>
+
+
+  <!-- Discount -->
+
+  <div class="discount">
+    <b>UP TO ₹110 OFF</b>
+    <span>on 1st order</span>
+    <strong>✓ APPLIED</strong>
+  </div>
+
+
+  <!-- Products -->
+
+  <section class="products-section">
+
+    <div class="section-heading">
+      <h2>Trending Products</h2>
+      <button>View All</button>
+    </div>
+
+    <div id="products" class="products">
+
+
+      <article class="product" data-category="beauty">
+
+        <button class="heart">♡</button>
+
+        <div class="product-image">
+          🧼
+        </div>
+
+        <div class="product-info">
+          <span class="mall">✓ Shopzo Mall</span>
+
+          <h3>Natural Herbal Soap</h3>
+
+          <div>
+            <strong>₹92</strong>
+            <del>₹163</del>
+            <span>44% off</span>
+          </div>
+
+          <p class="discount-applied">
+            ✓ Discount applied
+          </p>
+
+          <p class="offer-price">
+            ₹70 with 1 Special Offer
+          </p>
+
+          <p>⭐ 4.0 <small>(7,654)</small></p>
+
+          <button class="add-button"
+                  data-product="Natural Herbal Soap">
+            Add to Cart
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <article class="product" data-category="beauty">
+
+        <button class="heart">♡</button>
+
+        <div class="product-image">
+          🧴
+        </div>
+
+        <div class="product-info">
+          <span class="mall">✓ Shopzo Mall</span>
+
+          <h3>Magic Face Wash</h3>
+
+          <div>
+            <strong>₹139</strong>
+            <del>₹333</del>
+            <span>58% off</span>
+          </div>
+
+          <p class="discount-applied">
+            ✓ Discount applied
+          </p>
+
+          <p class="offer-price">
+            ₹109 with 1 Special Offer
+          </p>
+
+          <p>⭐ 4.2 <small>(68,043)</small></p>
+
+          <button class="add-button"
+                  data-product="Magic Face Wash">
+            Add to Cart
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <article class="product" data-category="fashion">
+
+        <button class="heart">♡</button>
+
+        <div class="product-image">
+          👕
+        </div>
+
+        <div class="product-info">
+
+          <h3>Premium Cotton T-Shirt</h3>
+
+          <div>
+            <strong>₹114</strong>
+            <del>₹193</del>
+            <span>41% off</span>
+          </div>
+
+          <p class="discount-applied">
+            ✓ Discount applied
+          </p>
+
+          <p class="offer-price">
+            ₹83 with 1 Special Offer
+          </p>
+
+          <p>⭐ 4.0 <small>(25,404)</small></p>
+
+          <button class="add-button"
+                  data-product="Premium Cotton T-Shirt">
+            Add to Cart
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <article class="product" data-category="shoes">
+
+        <button class="heart">♡</button>
+
+        <div class="product-image">
+          👡
+        </div>
+
+        <div class="product-info">
+
+          <h3>Women's Casual Sandals</h3>
+
+          <div>
+            <strong>₹131</strong>
+            <del>₹196</del>
+            <span>33% off</span>
+          </div>
+
+          <p class="discount-applied">
+            ✓ Discount applied
+          </p>
+
+          <p class="offer-price">
+            ₹104 with 1 Special Offer
+          </p>
+
+          <p>⭐ 3.9 <small>(45,020)</small></p>
+
+          <button class="add-button"
+                  data-product="Women's Casual Sandals">
+            Add to Cart
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <article class="product" data-category="beauty">
+
+        <button class="heart">♡</button>
+
+        <div class="product-image">
+          🧴
+        </div>
+
+        <div class="product-info">
+
+          <h3>Bright Beauty Face Wash</h3>
+
+          <div>
+            <strong>₹132</strong>
+            <del>₹230</del>
+            <span>43% off</span>
+          </div>
+
+          <p class="discount-applied">
+            ✓ Discount applied
+          </p>
+
+          <p class="offer-price">
+            ₹106 with 1 Special Offer
+          </p>
+
+          <p>⭐ 4.3 <small>(22,373)</small></p>
+
+          <button class="add-button"
+                  data-product="Beauty Face Wash">
+            Add to Cart
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <article class="product" data-category="fashion">
+
+        <button class="heart">♡</button>
+
+        <div class="product-image">
+          👚
+        </div>
+
+        <div class="product-info">
+
+          <h3>Floral Women's Kurti</h3>
+
+          <div>
+            <strong>₹108</strong>
+            <del>₹183</del>
+            <span>41% off</span>
+          </div>
+
+          <p class="discount-applied">
+            ✓ Discount applied
+          </p>
+
+          <p class="offer-price">
+            ₹84 with 1 Special Offer
+          </p>
+
+          <p>⭐ 3.9 <small>(1,005)</small></p>
+
+          <button class="add-button"
+                  data-product="Floral Women's Kurti">
+            Add to Cart
+          </button>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- Bottom Navigation -->
+
+<nav class="bottom-nav">
+
+  <button class="active">
+    <span>⌂</span>
+    Home
+  </button>
+
+  <button>
+    <span>👕</span>
+    Categories
+  </button>
+
+  <button>
+    <span>📦</span>
+    My Orders
+  </button>
+
+  <button>
+    <span>?</span>
+    Help
+  </button>
+
+  <button>
+    <span>😎</span>
+    Account
+  </button>
+
+</nav>
+
+
+<div id="cartToast" class="toast">
+  Product added to cart 🛒
+</div>
+
+
+<script src="script.js"></script>
 
 </body>
         </html>

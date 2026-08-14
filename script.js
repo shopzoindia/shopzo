@@ -124,3 +124,55 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const navItems = document.querySelectorAll(".nav-item");
+
+  navItems.forEach(function (item) {
+
+    item.addEventListener("click", function () {
+
+      navItems.forEach(function (nav) {
+        nav.classList.remove("active");
+      });
+
+      this.classList.add("active");
+
+      const page = this.dataset.page;
+
+      if (page === "home") {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      }
+
+      if (page === "categories") {
+        const categories = document.querySelector(".categories");
+
+        if (categories) {
+          categories.scrollIntoView({
+            behavior: "smooth"
+          });
+        }
+      }
+
+      if (page === "orders") {
+        alert("My Orders");
+      }
+
+      if (page === "help") {
+        alert("Help & Support");
+      }
+
+      if (page === "account") {
+        alert("My Account");
+      }
+
+    });
+
+  });
+
+});

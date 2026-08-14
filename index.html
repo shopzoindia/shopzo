@@ -3,172 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SHOPZO - Online Shopping</title>
+  <title>SHOPZO</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header class="top">
+  <div class="header-row">
+    <div class="profile">🙏</div>
+    <div class="hello">
+      <span>Hello,</span>
+      <b>Let's shop!</b>
+    </div>
 
-  <div class="hello">
-    <div class="hello-icon">🙏</div>
-
-    <div>
-      <div>Hello,</div>
-      <strong>Let's shop!</strong>
+    <div class="header-icons">
+      <span>♡</span>
+      <span>🛒</span>
     </div>
   </div>
 
-  <div class="header-actions">
-    <button>♡</button>
-    <button>🛒</button>
-  </div>
-
-
-  <section class="sale-banner">
-
+  <div class="sale">
     <div>
       <h1>SHOPZO</h1>
       <h2>MEGA SAVINGS SALE</h2>
       <b>UP TO 70% OFF</b>
     </div>
-
-    <span>⚡</span>
-
-  </section>
-
-
-  <div class="search">
-
-    <span>⌕</span>
-
-    <input
-      id="searchInput"
-      type="search"
-      placeholder="Search by Keyword or Product"
-    >
-
-    <span>🎤</span>
-    <span>📷</span>
-
+    <div class="lightning">⚡</div>
   </div>
 
+  <div class="search">
+    <span>⌕</span>
+    <input id="searchInput" type="text"
+      placeholder="Search by Keyword or Product">
+    <span>🎤</span>
+    <span>📷</span>
+  </div>
 </header>
 
 
-<section class="benefits">
-
-  <div>
-    📦
-    <span>
-      <b>7 Days</b>
-      <small>Easy Return</small>
-    </span>
-  </div>
-
-  <div>
-    💵
-    <span>
-      <b>Cash on</b>
-      <small>Delivery</small>
-    </span>
-  </div>
-
-  <div>
-    🏷️
-    <span>
-      <b>Lowest</b>
-      <small>Price</small>
-    </span>
-  </div>
-
+<section class="features">
+  <div>📦 <b>7 Days</b><small>Easy Return</small></div>
+  <div>💵 <b>Cash on</b><small>Delivery</small></div>
+  <div>🏷️ <b>Lowest</b><small>Price</small></div>
 </section>
 
 
-<main>
+<section class="categories">
+  <div class="section-title">
+    <h2>Shop by Category</h2>
+    <b>View All</b>
+  </div>
 
-  <section class="section">
-
-    <div class="section-title">
-      <h2>Shop by Category</h2>
-      <a href="#">View All</a>
-    </div>
-
-    <div class="categories" id="categories"></div>
-
-  </section>
-
-
-  <!-- REAL PRODUCTS WILL APPEAR HERE -->
-
-  <section class="offer">
-
-    <div class="offer-title">
-      ✨ OFFER ZONE ✨
-    </div>
-
-    <div
-      class="offer-grid"
-      id="offer-products">
-    </div>
-
-  </section>
+  <div class="category-list">
+    <div class="category">▦<span>All</span></div>
+    <div class="category">👗<span>Fashion</span></div>
+    <div class="category">📱<span>Electronics</span></div>
+    <div class="category">💄<span>Beauty</span></div>
+    <div class="category">👟<span>Footwear</span></div>
+    <div class="category">🏠<span>Home</span></div>
+    <div class="category">🧸<span>Kids</span></div>
+  </div>
+</section>
 
 
-  <section class="section">
+<!-- OFFER ZONE -->
+<section class="offer-section">
+  <h2>✨ OFFER ZONE ✨</h2>
 
-    <div class="section-title">
+  <div id="offerProducts" class="product-row"></div>
+</section>
 
-      <div>
-        <h2>Flash Sale ⚡</h2>
-      </div>
 
-      <a href="#">VIEW ALL ›</a>
+<!-- FLASH SALE -->
+<section class="flash">
+  <div class="section-title">
+    <h2>Flash Sale ⚡</h2>
+    <b>VIEW ALL ›</b>
+  </div>
 
-    </div>
-
-    <div
-      class="flash-grid"
-      id="flashProducts">
-    </div>
-
-  </section>
-
-</main>
+  <div id="flashProducts" class="flash-row"></div>
+</section>
 
 
 <nav class="bottom-nav">
-
-  <a class="active" href="#">
-    ⌂
-    <span>Home</span>
-  </a>
-
-  <a href="#">
-    👕
-    <span>Categories</span>
-  </a>
-
-  <a href="#">
-    📦
-    <span>My Orders</span>
-  </a>
-
-  <a href="#">
-    ❓
-    <span>Help</span>
-  </a>
-
-  <a href="#">
-    😎
-    <span>Account</span>
-  </a>
-
+  <div class="active">⌂<span>Home</span></div>
+  <div>👕<span>Categories</span></div>
+  <div>📦<span>My Orders</span></div>
+  <div>❓<span>Help</span></div>
+  <div>😎<span>Account</span></div>
 </nav>
 
-
 <script src="script.js"></script>
-
 </body>
 </html>

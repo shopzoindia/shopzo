@@ -1,99 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SHOPZO</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopzo</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+<div class="app">
 
-<header class="top">
-  <div class="header-row">
-    <div class="profile">🙏</div>
-    <div class="hello">
-      <span>Hello,</span>
-      <b>Let's shop!</b>
-    </div>
-
-    <div class="header-icons">
-      <span>♡</span>
-      <span>🛒</span>
-    </div>
-  </div>
-
-  <div class="sale">
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">🙏</div>
     <div>
-      <h1>SHOPZO</h1>
-      <h2>MEGA SAVINGS SALE</h2>
-      <b>UP TO 70% OFF</b>
+      <div class="hello">Hello,</div>
+      <div class="lets">Let's shop!</div>
     </div>
-    <div class="lightning">⚡</div>
   </div>
 
-  <div class="search">
-    <span>⌕</span>
-    <input id="searchInput" type="text"
-      placeholder="Search by Keyword or Product">
-    <span>🎤</span>
-    <span>📷</span>
+  <div class="top-actions">
+    <span class="lang">अ<br>A</span>
+    <button>♡</button>
+    <button>🛒</button>
   </div>
 </header>
 
+<div class="search-area">
+  <div class="search-box">
+    <span class="search-icon">⌕</span>
+    <input id="searchInput" placeholder="Search by Keyword or Product ID">
+    <span>🎙️</span>
+    <span>📷</span>
+  </div>
+</div>
 
-<section class="features">
-  <div>📦 <b>7 Days</b><small>Easy Return</small></div>
-  <div>💵 <b>Cash on</b><small>Delivery</small></div>
-  <div>🏷️ <b>Lowest</b><small>Price</small></div>
-</section>
-
-
-<section class="categories">
-  <div class="section-title">
-    <h2>Shop by Category</h2>
-    <b>View All</b>
+<section class="benefits">
+  <div>
+    <span>📦</span>
+    <p><b>7 Days</b><small>Easy Return</small></p>
   </div>
 
-  <div class="category-list">
-    <div class="category">▦<span>All</span></div>
-    <div class="category">👗<span>Fashion</span></div>
-    <div class="category">📱<span>Electronics</span></div>
-    <div class="category">💄<span>Beauty</span></div>
-    <div class="category">👟<span>Footwear</span></div>
-    <div class="category">🏠<span>Home</span></div>
-    <div class="category">🧸<span>Kids</span></div>
+  <div>
+    <span>💵</span>
+    <p><b>Cash on</b><small>Delivery</small></p>
+  </div>
+
+  <div>
+    <span>🏷️</span>
+    <p><b>Lowest</b><small>Price</small></p>
   </div>
 </section>
 
-
-<!-- OFFER ZONE -->
-<section class="offer-section">
-  <h2>✨ OFFER ZONE ✨</h2>
-
-  <div id="offerProducts" class="product-row"></div>
-</section>
-
-
-<!-- FLASH SALE -->
-<section class="flash">
-  <div class="section-title">
-    <h2>Flash Sale ⚡</h2>
-    <b>VIEW ALL ›</b>
+<section class="categories section">
+  <div class="heading">
+    <h2>Categories</h2>
   </div>
 
-  <div id="flashProducts" class="flash-row"></div>
+  <div class="category-row">
+    <div class="cat"><i>▦</i><span>Categories</span></div>
+    <div class="cat"><i>👗</i><span>Kurti & Dress</span></div>
+    <div class="cat"><i>🧸</i><span>Kids & Toys</span></div>
+    <div class="cat"><i>👚</i><span>Western Wear</span></div>
+    <div class="cat"><i>💄</i><span>Beauty</span></div>
+    <div class="cat"><i>👟</i><span>Footwear</span></div>
+  </div>
 </section>
 
+<section class="recent section">
+  <div class="heading">
+    <h2>Recently Viewed</h2>
+  </div>
+
+  <div class="recent-row">
+    <div class="recent-card">
+      <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=600&q=80">
+      <span>Fridge Covers</span>
+    </div>
+
+    <div class="recent-card">
+      <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=600&q=80">
+      <span>Bangles & Bracelets</span>
+    </div>
+
+    <div class="recent-card">
+      <img src="https://images.unsplash.com/photo-1583743814966-8936f37f4678?auto=format&fit=crop&w=600&q=80">
+      <span>Black Fashion</span>
+    </div>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <button>↕ Sort</button>
+  <button>Category⌄</button>
+  <button>Gender⌄</button>
+  <button>☷ Filters</button>
+</div>
+
+<section class="products section">
+  <div id="products" class="product-grid"></div>
+</section>
 
 <nav class="bottom-nav">
-  <div class="active">⌂<span>Home</span></div>
-  <div>👕<span>Categories</span></div>
-  <div>📦<span>My Orders</span></div>
-  <div>❓<span>Help</span></div>
-  <div>😎<span>Account</span></div>
+  <a class="active"><b>⌂</b><span>Home</span></a>
+  <a><b>👕</b><span>Categories</span></a>
+  <a><b>📦</b><span>My Orders</span></a>
+  <a><b>?</b><span>Help</span></a>
+  <a><b>😎</b><span>Account</span></a>
 </nav>
+
+</div>
 
 <script src="script.js"></script>
 </body>
-</html>
+                       </html>

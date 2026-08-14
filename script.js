@@ -1,11 +1,7 @@
-// ================================
-// SHOPZO PRODUCT DATA
-// ================================
-// Abhi ye demo products hain.
-// Baad mein isi system ko Admin Panel + Database
-// se connect karenge, tab tumhare apne products
-// Offer Zone mein automatically dikhenge.
-// ================================
+/* =================================
+   SHOPZO PRODUCTS
+   YAHAN APNE PRODUCTS ADD KAR SAKTE HO
+================================= */
 
 const products = [
 
@@ -14,11 +10,8 @@ const products = [
     price: 399,
     oldPrice: 799,
     discount: "50% OFF",
-    rating: "4.2 ★",
-    category: "Fashion",
-    image: "https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=600&q=80",
-    offer: true,
-    flash: true
+    rating: "4.2",
+    image: "https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=600&q=80"
   },
 
   {
@@ -26,11 +19,8 @@ const products = [
     price: 499,
     oldPrice: 999,
     discount: "50% OFF",
-    rating: "4.4 ★",
-    category: "Fashion",
-    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=600&q=80",
-    offer: true,
-    flash: true
+    rating: "4.4",
+    image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=600&q=80"
   },
 
   {
@@ -38,11 +28,8 @@ const products = [
     price: 299,
     oldPrice: 599,
     discount: "50% OFF",
-    rating: "4.1 ★",
-    category: "Fashion",
-    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80",
-    offer: true,
-    flash: false
+    rating: "4.1",
+    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80"
   },
 
   {
@@ -50,347 +37,122 @@ const products = [
     price: 249,
     oldPrice: 499,
     discount: "50% OFF",
-    rating: "4.0 ★",
-    category: "Footwear",
-    image: "https://images.unsplash.com/photo-1603487742131-4160ec999306?auto=format&fit=crop&w=600&q=80",
-    offer: true,
-    flash: true
+    rating: "4.0",
+    image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80"
+  },
+
+  {
+    name: "Beauty Product",
+    price: 199,
+    oldPrice: 399,
+    discount: "50% OFF",
+    rating: "4.3",
+    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80"
+  },
+
+  {
+    name: "Stylish Shoes",
+    price: 599,
+    oldPrice: 999,
+    discount: "40% OFF",
+    rating: "4.5",
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80"
   }
-
 ];
 
 
-// ================================
-// CATEGORIES
-// ================================
+/* =================================
+   PRODUCT CARD
+================================= */
 
-const categories = [
-
-  ["▦", "All"],
-  ["👗", "Fashion"],
-  ["📱", "Electronics"],
-  ["💄", "Beauty"],
-  ["👟", "Footwear"],
-  ["🏠", "Home"],
-  ["🧸", "Kids"]
-
-];
-
-
-// ================================
-// PRODUCT CARD
-// ================================
-
-function productCard(product) {
+function createProduct(product) {
 
   return `
+    <div class="product">
 
-    <div class="product-card">
-
-      <div class="product-image">
-
-        <img
-          src="${product.image}"
-          alt="${product.name}"
-          style="
-            width:100%;
-            height:210px;
-            object-fit:cover;
-            border-radius:10px;
-          "
-        >
-
-      </div>
+      <img src="${product.image}" alt="${product.name}">
 
       <div class="product-info">
 
-        <div class="product-name">
-          ${product.name}
-        </div>
+        <h3>${product.name}</h3>
 
-        <div class="product-price">
+        <div class="price">
           ₹${product.price}
-
-          <span style="
-            color:#999;
-            text-decoration:line-through;
-            font-size:13px;
-            margin-left:5px;
-          ">
-            ₹${product.oldPrice}
-          </span>
+          <span class="old-price">₹${product.oldPrice}</span>
         </div>
 
-        <div style="
-          color:#16845b;
-          font-size:13px;
-          margin-top:5px;
-        ">
+        <div class="discount">
           ${product.discount}
         </div>
 
-        <div style="
-          display:inline-block;
-          background:#1fa46d;
-          color:white;
-          border-radius:14px;
-          padding:3px 7px;
-          margin-top:7px;
-          font-size:12px;
-        ">
-          ${product.rating}
+        <div class="rating">
+          ⭐ ${product.rating}
         </div>
 
-        <button
-          onclick="addToCart('${product.name}')"
-        >
+        <button class="cart" onclick="addToCart('${product.name}')">
           Add to Cart
         </button>
 
       </div>
 
     </div>
-
   `;
-
 }
 
 
-// ================================
-// CATEGORY DISPLAY
-// ================================
+/* =================================
+   SHOW OFFER ZONE
+================================= */
 
-function renderCategories() {
+function showProducts(list = products) {
 
-  const box =
-    document.getElementById("categories");
+  const offer = document.getElementById("offerProducts");
+  const flash = document.getElementById("flashProducts");
 
-  if (!box) return;
-
-  box.innerHTML = categories.map(function(item) {
-
-    return `
-
-      <div class="category">
-
-        <div class="category-icon">
-          ${item[0]}
-        </div>
-
-        <div>
-          ${item[1]}
-        </div>
-
-      </div>
-
-    `;
-
-  }).join("");
-
-}
-
-
-// ================================
-// OFFER ZONE
-// ================================
-
-function renderOfferZone(list = products) {
-
-  const box =
-    document.getElementById("offer-products");
-
-  if (!box) return;
-
-  const offerProducts =
-    list.filter(function(product) {
-
-      return product.offer === true;
-
-    });
-
-
-  if (offerProducts.length === 0) {
-
-    box.innerHTML = `
-
-      <div class="empty">
-
-        Offer Zone mein abhi koi product nahi hai.
-
-      </div>
-
-    `;
-
-    return;
-
+  if (offer) {
+    offer.innerHTML = list.map(createProduct).join("");
   }
 
-
-  box.innerHTML =
-    offerProducts
-      .map(productCard)
-      .join("");
-
-}
-
-
-// ================================
-// FLASH SALE
-// ================================
-
-function renderFlashSale() {
-
-  const box =
-    document.getElementById("flashProducts");
-
-  if (!box) return;
-
-
-  const flashProducts =
-    products.filter(function(product) {
-
-      return product.flash === true;
-
-    });
-
-
-  if (flashProducts.length === 0) {
-
-    box.innerHTML = `
-
-      <div class="empty">
-
-        Flash Sale mein abhi koi product nahi hai.
-
-      </div>
-
-    `;
-
-    return;
-
+  if (flash) {
+    flash.innerHTML = list.slice(0, 4).map(createProduct).join("");
   }
-
-
-  box.innerHTML =
-    flashProducts
-      .map(productCard)
-      .join("");
-
 }
 
 
-// ================================
-// SEARCH
-// ================================
+/* =================================
+   SEARCH
+================================= */
 
-const searchInput =
-  document.getElementById("searchInput");
-
+const searchInput = document.getElementById("searchInput");
 
 if (searchInput) {
 
-  searchInput.addEventListener(
-    "input",
-    function() {
+  searchInput.addEventListener("input", function () {
 
-      const search =
-        searchInput.value
-          .toLowerCase()
-          .trim();
+    const text = this.value.toLowerCase().trim();
 
+    const filtered = products.filter(product =>
+      product.name.toLowerCase().includes(text)
+    );
 
-      if (search === "") {
+    showProducts(filtered);
 
-        renderOfferZone();
-        renderFlashSale();
-
-        return;
-
-      }
-
-
-      const results =
-        products.filter(function(product) {
-
-          return (
-
-            product.name
-              .toLowerCase()
-              .includes(search)
-
-            ||
-
-            product.category
-              .toLowerCase()
-              .includes(search)
-
-          );
-
-        });
-
-
-      renderOfferZone(results);
-
-      const flashResults =
-        results.filter(function(product) {
-
-          return product.flash === true;
-
-        });
-
-
-      const flashBox =
-        document.getElementById("flashProducts");
-
-
-      if (flashBox) {
-
-        flashBox.innerHTML =
-          flashResults.length
-
-            ? flashResults
-                .map(productCard)
-                .join("")
-
-            : `<div class="empty">
-                 Product nahi mila.
-               </div>`;
-
-      }
-
-    }
-  );
+  });
 
 }
 
 
-// ================================
-// ADD TO CART
-// ================================
+/* =================================
+   ADD TO CART
+================================= */
 
-function addToCart(productName) {
-
-  alert(
-    productName +
-    " cart mein add ho gaya 🛒"
-  );
-
+function addToCart(name) {
+  alert(name + " added to cart!");
 }
 
 
-// ================================
-// START SHOPZO
-// ================================
+/* =================================
+   START
+================================= */
 
-document.addEventListener(
-  "DOMContentLoaded",
-  function() {
-
-    renderCategories();
-
-    renderOfferZone();
-
-    renderFlashSale();
-
-  }
-);
+showProducts();

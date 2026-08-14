@@ -1,158 +1,148 @@
-/* =================================
-   SHOPZO PRODUCTS
-   YAHAN APNE PRODUCTS ADD KAR SAKTE HO
-================================= */
-
 const products = [
-
   {
-    name: "Stylish Ladies Kurti",
-    price: 399,
-    oldPrice: 799,
-    discount: "50% OFF",
-    rating: "4.2",
-    image: "https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=600&q=80"
+    name: "Fridge Covers",
+    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=80",
+    price: 65,
+    old: 123,
+    off: "47% off",
+    special: "₹45 with 1 Special Offer",
+    rating: "3.9",
+    reviews: "28,613"
   },
 
   {
-    name: "Women's Fashion Dress",
-    price: 499,
-    oldPrice: 999,
-    discount: "50% OFF",
-    rating: "4.4",
-    image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=600&q=80"
-  },
-
-  {
-    name: "Men's Casual Shirt",
-    price: 299,
-    oldPrice: 599,
-    discount: "50% OFF",
+    name: "Storage Organizer",
+    image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=700&q=80",
+    price: 74,
+    old: 136,
+    off: "46% off",
+    special: "₹55 with 1 Special Offer",
     rating: "4.1",
-    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80"
+    reviews: "1,367"
   },
 
   {
-    name: "Fashion Sandals",
-    price: 249,
-    oldPrice: 499,
-    discount: "50% OFF",
+    name: "Premium Dhoop Sticks",
+    image: "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=700&q=80",
+    price: 81,
+    old: 148,
+    off: "45% off",
+    special: "₹65 with 1 Special Offer",
+    rating: "4.2",
+    reviews: "3,421"
+  },
+
+  {
+    name: "Table Cover Set",
+    image: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=700&q=80",
+    price: 75,
+    old: 137,
+    off: "45% off",
+    special: "₹59 with 1 Special Offer",
     rating: "4.0",
-    image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80"
-  },
-
-  {
-    name: "Beauty Product",
-    price: 199,
-    oldPrice: 399,
-    discount: "50% OFF",
-    rating: "4.3",
-    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80"
-  },
-
-  {
-    name: "Stylish Shoes",
-    price: 599,
-    oldPrice: 999,
-    discount: "40% OFF",
-    rating: "4.5",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80"
+    reviews: "2,210"
   }
 ];
 
 
-/* =================================
-   PRODUCT CARD
-================================= */
-
-function createProduct(product) {
+function makeProduct(product) {
 
   return `
-    <div class="product">
+    <article class="product">
 
-      <img src="${product.image}" alt="${product.name}">
+      <img
+        src="${product.image}"
+        alt="${product.name}"
+        onerror="this.src='https://placehold.co/600x650/f5edf5/7a1768?text=Shopzo'"
+      >
 
-      <div class="product-info">
+      <div class="info">
 
-        <h3>${product.name}</h3>
+        <span class="heart">♡</span>
 
         <div class="price">
           ₹${product.price}
-          <span class="old-price">₹${product.oldPrice}</span>
+          <span class="old">${product.old}</span>
+          <span class="off">${product.off}</span>
         </div>
 
         <div class="discount">
-          ${product.discount}
+          Discount applied ✓
         </div>
 
-        <div class="rating">
-          ⭐ ${product.rating}
+        <div class="special">
+          ${product.special}
         </div>
 
-        <button class="cart" onclick="addToCart('${product.name}')">
+        <div>
+          <span class="rating">
+            ${product.rating} ★
+          </span>
+
+          <span>
+            ${product.reviews}
+          </span>
+        </div>
+
+        <button
+          class="cart"
+          onclick="addToCart('${product.name}')"
+        >
           Add to Cart
         </button>
 
       </div>
 
-    </div>
+    </article>
   `;
 }
 
 
-/* =================================
-   SHOW OFFER ZONE
-================================= */
+function showProducts(list) {
 
-function showProducts(list = products) {
+  const container =
+    document.getElementById("products");
 
-  const offer = document.getElementById("offerProducts");
-  const flash = document.getElementById("flashProducts");
-
-  if (offer) {
-    offer.innerHTML = list.map(createProduct).join("");
-  }
-
-  if (flash) {
-    flash.innerHTML = list.slice(0, 4).map(createProduct).join("");
-  }
+  container.innerHTML =
+    list.map(makeProduct).join("");
 }
 
-
-/* =================================
-   SEARCH
-================================= */
-
-const searchInput = document.getElementById("searchInput");
-
-if (searchInput) {
-
-  searchInput.addEventListener("input", function () {
-
-    const text = this.value.toLowerCase().trim();
-
-    const filtered = products.filter(product =>
-      product.name.toLowerCase().includes(text)
-    );
-
-    showProducts(filtered);
-
-  });
-
-}
-
-
-/* =================================
-   ADD TO CART
-================================= */
 
 function addToCart(name) {
-  alert(name + " added to cart!");
+
+  alert(name + " cart me add ho gaya!");
+
 }
 
 
-/* =================================
-   START
-================================= */
+const searchInput =
+  document.getElementById("searchInput");
 
-showProducts();
+
+searchInput.addEventListener("input", function () {
+
+  const searchText =
+    this.value.toLowerCase().trim();
+
+  if (searchText === "") {
+
+    showProducts(products);
+    return;
+
+  }
+
+  const filtered =
+    products.filter(function(product) {
+
+      return product.name
+        .toLowerCase()
+        .includes(searchText);
+
+    });
+
+  showProducts(filtered);
+
+});
+
+
+showProducts(products);

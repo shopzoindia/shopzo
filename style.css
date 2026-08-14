@@ -6,711 +6,302 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #f6f6f6;
-  color: #292633;
-  padding-bottom: 75px;
+  background: #f7f7f7;
+  color: #252525;
+  padding-bottom: 82px;
 }
 
-button {
-  font-family: inherit;
-  cursor: pointer;
-}
-
-.header {
-  background: #a90000;
+.top {
+  background: #c90000;
   color: white;
-  padding: 14px 12px 18px;
+  padding: 18px 18px 34px;
 }
 
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.profile {
+.hello {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
+  font-size: 21px;
 }
 
-.profile-icon {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: #ffe6d5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-}
-
-.profile small,
-.profile strong {
+.hello strong {
   display: block;
+  font-size: 29px;
 }
 
-.profile small {
-  font-size: 16px;
-}
-
-.profile strong {
-  font-size: 20px;
-  margin-top: 4px;
+.hello-icon {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: #ffe7d5;
+  display: grid;
+  place-items: center;
+  font-size: 42px;
 }
 
 .header-actions {
+  position: absolute;
+  right: 16px;
+  top: 26px;
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 .header-actions button {
+  border: 0;
   background: transparent;
   color: white;
-  border: 0;
-  font-size: 32px;
-}
-
-.sale-banner {
-  max-width: 1100px;
-  margin: 12px auto;
-  padding: 15px 20px;
-  border-radius: 12px;
-
-  background: linear-gradient(
-    90deg,
-    #a90000,
-    #c80000
-  );
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.sale-banner b,
-.sale-banner strong,
-.sale-banner small {
-  display: block;
-}
-
-.sale-banner b {
-  font-size: 18px;
-}
-
-.sale-banner strong {
-  font-size: 25px;
-}
-
-.sale-banner small {
-  margin-top: 4px;
-  font-weight: bold;
-}
-
-.sale-banner span {
-  font-size: 55px;
-}
-
-.search-box {
-  max-width: 1100px;
-  margin: auto;
-  background: white;
-  border-radius: 18px;
-  padding: 10px 15px;
-
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.search-box > span {
-  color: #a0a0b0;
   font-size: 40px;
 }
 
-.search-box input {
+.sale-banner {
+  min-height: 180px;
+  background: linear-gradient(135deg, #d90000, #b60000);
+  margin: 18px -18px 0;
+  padding: 26px 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sale-banner h1 {
+  font-size: 27px;
+}
+
+.sale-banner h2 {
+  font-size: 27px;
+  margin: 5px 0 12px;
+}
+
+.sale-banner > span {
+  font-size: 76px;
+}
+
+.search {
+  background: white;
+  border-radius: 26px;
+  height: 72px;
+  margin-top: 24px;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 12px;
+}
+
+.search span {
+  font-size: 29px;
+}
+
+.search input {
   flex: 1;
   border: 0;
   outline: 0;
-  font-size: 16px;
-}
-
-.search-box button {
-  border: 0;
-  background: transparent;
-  font-size: 23px;
+  font-size: 18px;
 }
 
 .benefits {
   background: white;
-  max-width: 1100px;
-  margin: 18px auto;
-  padding: 18px 10px;
-
+  padding: 22px 12px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
-  border-radius: 15px;
+  gap: 8px;
 }
 
 .benefits div {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  column-gap: 7px;
+  display: flex;
   align-items: center;
-
-  padding: 5px 12px;
+  gap: 8px;
+  font-size: 28px;
   border-right: 1px solid #ddd;
+  padding: 8px;
 }
 
 .benefits div:last-child {
-  border-right: 0;
+  border: 0;
 }
 
 .benefits span {
-  grid-row: span 2;
-  font-size: 27px;
+  display: flex;
+  flex-direction: column;
 }
 
-.benefits b,
+.benefits b {
+  font-size: 15px;
+}
+
 .benefits small {
-  display: block;
+  font-size: 14px;
 }
 
-.category-section,
-.products-section,
-.flash,
-.saver {
-  max-width: 1100px;
-  margin: 22px auto;
+.section {
+  padding: 22px 18px;
 }
 
-.section-heading {
+.section-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 12px 14px;
+  margin-bottom: 15px;
 }
 
-.section-heading h2 {
-  font-size: 22px;
+.section-title h2 {
+  font-size: 25px;
 }
 
-.section-heading button {
-  border: 0;
-  background: transparent;
-  color: #a00070;
+.section-title a {
+  color: #a00074;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .categories {
   display: flex;
   gap: 12px;
   overflow-x: auto;
-  padding: 4px 12px 12px;
 }
 
 .category {
-  min-width: 90px;
+  min-width: 125px;
   background: white;
-  border: 0;
-  border-radius: 12px;
-  padding: 10px 7px;
+  border-radius: 16px;
+  padding: 14px 10px;
+  text-align: center;
 }
 
-.category div {
-  width: 62px;
-  height: 62px;
-  margin: auto;
-
+.category-icon {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-
   background: #fff0f8;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 30px;
+  display: grid;
+  place-items: center;
+  margin: auto auto 8px;
+  font-size: 40px;
 }
 
-.category span {
-  display: block;
-  margin-top: 7px;
-  font-size: 13px;
-  white-space: nowrap;
-}
-
-.offer-zone {
-  max-width: 1100px;
-  margin: 20px auto;
-  padding: 18px;
-
-  background: linear-gradient(
-    #ffb629,
-    #ffd978
-  );
-
-  border-radius: 14px;
+.offer {
+  background: linear-gradient(180deg, #ffbd27, #ffd96b);
+  padding: 20px 14px 24px;
 }
 
 .offer-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-
-  color: #9c0070;
-  margin-bottom: 15px;
-}
-
-.offer-title h2 {
-  font-size: 27px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  color: #a00074;
+  margin-bottom: 18px;
 }
 
 .offer-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-.offer-card {
-  background: #fff3c9;
-  border-radius: 10px;
-  text-align: center;
-  padding: 10px;
-  position: relative;
-  overflow: hidden;
-}
-
-.offer-card > span {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-
-  background: #a00000;
-  color: white;
-
-  padding: 4px 7px;
-  border-radius: 4px;
-
-  font-size: 11px;
-  font-weight: bold;
-}
-
-.offer-card div {
-  font-size: 70px;
-  padding: 15px 0 8px;
-}
-
-.offer-card strong,
-.offer-card small {
-  display: block;
-}
-
-.offer-card strong {
-  color: #8d0068;
-  font-size: 15px;
-}
-
-.offer-card small {
-  margin-top: 4px;
-  font-weight: bold;
-}
-
-.saver {
-  background: white;
-  padding: 18px;
-  border-radius: 12px;
-}
-
-.saver h2 {
-  margin-bottom: 15px;
-}
-
-.saver-row {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-}
-
-.saver-row > div {
-  min-width: 170px;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  text-align: center;
-  padding: 10px;
-}
-
-.round-image {
-  height: 120px;
-  border-radius: 10px;
-  background: #fff2cf;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 70px;
-}
-
-.saver-row b,
-.saver-row strong {
-  display: block;
-}
-
-.saver-row strong {
-  color: #a00000;
-  font-size: 25px;
-}
-
-.countdown {
-  max-width: 1100px;
-  margin: 20px auto;
-
-  background: #ffe17b;
-  padding: 14px;
-
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-
-  font-size: 18px;
-}
-
-.countdown span {
-  background: #b30000;
-  color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-
-.flash-row {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  padding: 0 12px;
-}
-
-.flash-row > div {
-  min-width: 180px;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  text-align: center;
-}
-
-.flash-img {
-  height: 140px;
-  background: #fff0f7;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 70px;
-}
-
-.flash-row b {
-  display: block;
-  padding: 12px 5px;
-}
-
-.filters {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
-  background: white;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-}
-
-.filters button {
-  padding: 17px 5px;
-  background: white;
-  border: 0;
-  border-right: 1px solid #ddd;
-
-  font-size: 15px;
-}
-
-.discount {
-  max-width: 1100px;
-  margin: 15px auto;
-
-  background: white;
-  border: 2px solid #8bd8c2;
-
-  border-radius: 10px;
-  padding: 14px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  color: #138f71;
-}
-
-.products {
-  display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2px;
-  background: #ddd;
+  gap: 12px;
 }
 
 .product {
   background: white;
-  position: relative;
+  border-radius: 12px;
   overflow: hidden;
 }
 
 .product-image {
-  height: 230px;
-
-  background: #f7f7f7;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 100px;
-}
-
-.heart {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-
-  width: 38px;
-  height: 38px;
-
-  border: 0;
-  border-radius: 50%;
-
-  background: white;
-
-  font-size: 27px;
-  z-index: 2;
+  height: 210px;
+  background: #f8f8f8;
+  display: grid;
+  place-items: center;
+  font-size: 90px;
 }
 
 .product-info {
-  padding: 12px;
+  padding: 10px;
 }
 
-.product-info h3 {
-  margin: 8px 0;
-  font-size: 16px;
+.product-name {
+  font-weight: 600;
+  min-height: 38px;
 }
 
-.product-info > div {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+.product-price {
+  margin-top: 5px;
+  font-size: 20px;
+  font-weight: 800;
 }
 
-.product-info > div strong {
-  font-size: 21px;
-}
-
-.product-info del {
-  color: #777;
-}
-
-.product-info > div span {
-  color: #555;
-}
-
-.mall {
-  display: inline-block;
-  background: #7137d9;
-  color: white;
-  padding: 5px 9px;
-  border-radius: 5px;
-  font-size: 12px;
-}
-
-.discount-applied {
-  background: #e0f5ec;
-  color: #168e6f;
-  padding: 6px;
-  margin-top: 9px;
-  border-radius: 4px;
-}
-
-.offer-price {
-  color: #168e6f;
-  margin: 7px 0;
-}
-
-.add-button {
+.product-card button {
   width: 100%;
   margin-top: 10px;
-
   padding: 10px;
-
-  background: #a00070;
-  color: white;
-
   border: 0;
   border-radius: 7px;
-
+  background: #a00074;
+  color: white;
   font-weight: bold;
+}
+
+.flash-grid {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+}
+
+.flash-grid .product-card {
+  min-width: 190px;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.empty {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  grid-column: 1 / -1;
 }
 
 .bottom-nav {
   position: fixed;
+  z-index: 20;
   bottom: 0;
   left: 0;
   right: 0;
-
-  z-index: 100;
-
-  height: 70px;
-
+  height: 72px;
   background: white;
   border-top: 1px solid #ddd;
-
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
 
-.bottom-nav button {
-  border: 0;
-  background: white;
+.bottom-nav a {
+  text-decoration: none;
   color: #555;
-  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
 }
 
-.bottom-nav span {
-  display: block;
-  font-size: 24px;
-  margin-bottom: 3px;
+.bottom-nav a span {
+  font-size: 12px;
+  margin-top: 3px;
 }
 
 .bottom-nav .active {
-  color: #a00070;
+  color: #a00074;
   font-weight: bold;
 }
 
-.toast {
-  position: fixed;
-  bottom: 85px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  background: #222;
-  color: white;
-
-  padding: 12px 20px;
-  border-radius: 25px;
-
-  display: none;
-  z-index: 200;
-}
-
-
-/* Desktop */
-
 @media (min-width: 700px) {
 
-  .products {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    background: transparent;
-  }
-
-  .product {
-    border-radius: 10px;
-  }
-
-  .product-image {
-    height: 260px;
-  }
-
-  .bottom-nav {
-    display: none;
-  }
-
-}
-
-
-/* Mobile */
-
-@media (max-width: 600px) {
-
-  .header {
-    padding-top: 10px;
-  }
-
-  .sale-banner {
-    margin-left: -12px;
-    margin-right: -12px;
-    border-radius: 0;
-  }
-
-  .sale-banner strong {
-    font-size: 20px;
-  }
-
-  .benefits {
-    margin: 12px 0;
-    border-radius: 0;
-  }
-
-  .benefits div {
-    padding: 4px 5px;
-    grid-template-columns: 30px 1fr;
-  }
-
-  .benefits span {
-    font-size: 22px;
-  }
-
-  .benefits b,
-  .benefits small {
-    font-size: 12px;
-  }
-
-  .offer-zone {
-    border-radius: 0;
+  body {
+    max-width: 1100px;
+    margin: auto;
   }
 
   .offer-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .offer-card div {
-    font-size: 45px;
-  }
-
-  .offer-card strong {
-    font-size: 12px;
-  }
-
-  .offer-card small {
-    font-size: 10px;
-  }
-
-  .countdown {
-    border-radius: 0;
-    font-size: 13px;
-  }
-
-  .discount {
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 12px;
-  }
-
-  .product-image {
-    height: 190px;
+    grid-template-columns: repeat(4, 1fr);
   }
 
   }
